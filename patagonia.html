@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/73c2441cf8.js"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Myriad Pro', sans-serif;
+        }
+        html,body{
+            height:100%;
+        }
+        .background {
+            width: 100%;
+            height: 4000px;
+            background-color: #151515;
+
+        }
+        .background_tool{
+                    width:1000px;
+                    margin:auto;
+        }
+
+        .logoname {
+            display:block;
+            margin:auto;
+            padding:40px;
+
+        }
+        .video{
+            width:1000px;
+            height:600px;
+        }
+
+        .menubox_1{
+                width:1000px;
+                height:100px;
+                margin-top:100px;
+                text-align:center;
+        }
+        .orange_bar{
+                width:600px;
+                height:7px;
+                background-color:#e1583f;
+
+        }
+        .blue_bar{
+                width:600px;
+                height:7px;
+                background-color:#0f4d85;
+                float:right;
+
+        }
+        .menubox1_name{
+                font-size : 90px;
+                font-weight:;
+                color:white;
+                margin:10px;
+        }
+        .main1{
+                width:1000px;
+                height:400px;
+                margin-top:100px;
+        }
+
+        .fa{
+            color:white;
+            opacity:0.5;
+        }
+        .back_button{
+                    width:150px;
+                    height:400px;
+                    line-height:400px;
+                    display:inline-block;
+                    float:left;
+
+        }
+        .menubox1_img{
+                width:600px;
+                height:400px;
+                margin-top:50px;
+                opacity:0.8;
+                margin-top:0px;
+                    }
+        .transition1{
+                transition:all 1s linear;
+        }
+        .right{
+            float:right;
+        }
+        .explain{
+            color:white;
+            font-size:30px;
+            border:1px solid red;
+            margin:10px;
+        }
+
+    </style>
+    <script>
+   $(function(){
+
+
+        var i=0;
+        var z=["./imgs/patapeople.jpg","./imgs/patagonia banner1.jpg","./imgs/patagonia banner2.jpg","./imgs/patagonia banner3.gif"];
+        var x=['Build the best product, cause no unnecessary harm,<br>use business to inspire and implement solutions<br>to the environmental crisis.','We’re on a mission to change people’s relationship with their stuff.<br>Worn Wear keeps your Patagonia® gear in motion longer<br>through repair and repurposing<br>and provides recycling options when repair is no longer viable.','We’re on a mission to change people’s relationship with their stuff.<br>Worn Wear keeps your Patagonia® gear in motion longer<br>through repair and repurposing<br>and provides recycling options when repair is no longer viable.','In 1994, we made the decision to take a stand against chemically intensive cotton and<br> switch to organically grown cotton throughout our line. In hindsight, <br>it was an audacious goal as the quantity of cotton <br>in our line was quite small in the giant world of cotton production. ']
+        $('#back').click(function(){
+                if(i==0){
+                        $('#menubox1_img').addClass('transition1').attr('src',z[i]);
+                        $('#explain').replaceWith('<p class="explain" id="explain">'+x[0]+'</p>');
+                        i=3;
+                }
+                if(i==1){
+                        i--;
+                        $('#menubox1_img').addClass('transition1').attr('src',z[i]);
+                        $('#explain').replaceWith('<p class="explain" id="explain">'+x[1]+'</p>');
+                }
+                if(i==2){
+                        i--;
+                        $('#menubox1_img').addClass('transition1').attr('src',z[i]);
+                        $('#explain').replaceWith('<p class="explain" id="explain">'+x[2]+'</p>');
+                }
+                if(i==3){
+                        i--;
+                        $('#menubox1_img').addClass('transition1').attr('src',z[i]);
+                        $('#explain').replaceWith('<p class="explain" id="explain">'+x[3]+'</p>');
+                }
+
+        });
+        $('#next').click(function(){
+                        if(i==3){
+                                $('#menubox1_img').addClass('transition1').attr('src',z[i]);
+                                i=0;
+                        }
+                        else{
+                            i++;
+                            $('#menubox1_img').addClass('trnasition1').attr('src',z[i]);
+
+                        }
+
+        });
+});
+
+    </script>
+</head>
+
+<body>
+    <div class="background">
+            <div class="background_tool">
+                    <img src="./imgs/logo.png">
+                    <img src="./imgs/logoname.png" class="logoname">
+                    <video class="video"  src="./imgs/patagonia_video.mp4" type="video/mp4" autoplay loop >
+                    </video>
+
+                <div class="menubox_1">
+                    <div class="orange_bar"></div>
+                    <p class="menubox1_name">we love the nature</p>
+                    <div class="blue_bar"></div>
+                    <div class="main1">
+                        <div class="back_button">
+                            <i id="back" class="fa fa-caret-left fa-3x" aria-hidden="true"></i>
+                        </div>
+                            <img id="menubox1_img"class="menubox1_img"src="./imgs/patapeople.jpg">
+                        <div class="back_button right">
+                            <i id="next"class="fa fa-caret-right fa-3x" aria-hidden="true"></i>
+                        </div>
+                        <p class="explain" id="explain">Build the best product, cause no unnecessary harm,<br>
+use business to inspire and implement solutions<br>
+to the environmental crisis.</p>
+
+                    </div>
+            </div>
+</body>
+
+</html>
